@@ -1,17 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                             https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.seleniumdump</groupId>
-	<artifactId>SeleniumDependency</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<artifactId>selenium-dependency</artifactId>
+	<version>1.0.0</version>
 	<packaging>jar</packaging>
-	<name>SeleniumDependency</name>
-	<description>Simple archetype POM for Selenium-based Automation Frameworks</description>
+
+	<name>Selenium Dependency</name>
+	<description>Reusable dependency bundle for Selenium-based automation frameworks.</description>
+	<url>https://github.com/dasatccu/selenium_dependency</url>
+
+	<licenses>
+		<license>
+			<name>The Apache License, Version 2.0</name>
+			<url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<id>dasatccu</id>
+			<name>Abhishek Das</name>
+			<url>https://github.com/dasatccu</url>
+		</developer>
+	</developers>
+
+	<scm>
+		<connection>scm:git:https://github.com/dasatccu/selenium_dependency.git</connection>
+		<developerConnection>scm:git:ssh://github.com/dasatccu/selenium_dependency.git</developerConnection>
+		<url>https://github.com/dasatccu/selenium_dependency</url>
+	</scm>
 
 	<distributionManagement>
 		<repository>
@@ -22,11 +44,13 @@
 	</distributionManagement>
 
 	<properties>
-		<java.version>11</java.version>
-		<selenium.version>4.34.0</selenium.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+		<selenium.version>4.25.0</selenium.version>
 		<testng.version>7.11.0</testng.version>
 		<log4j.version>2.23.1</log4j.version>
-		<jackson.version>2.20.0</jackson.version>
+		<jackson.version>2.17.2</jackson.version>
 	</properties>
 
 	<dependencies>
@@ -67,22 +91,32 @@
 
 	<build>
 		<plugins>
-			<!-- Java Compiler -->
+			<!-- Compiler Plugin -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.11.0</version>
 				<configuration>
-					<source>${java.version}</source>
-					<target>${java.version}</target>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
 				</configuration>
 			</plugin>
 
-			<!-- Surefire for TestNG -->
+			<!-- Surefire (for TestNG integration) -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.2.5</version>
+			</plugin>
+
+			<!-- Maven Deploy Plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>3.1.2</version>
+				<configuration>
+					<retryFailedDeploymentCount>3</retryFailedDeploymentCount>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
