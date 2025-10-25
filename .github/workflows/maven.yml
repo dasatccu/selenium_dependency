@@ -7,6 +7,7 @@ on:
     branches: [ "master" ]
   release:
     types: [created]
+  workflow_dispatch:  # Optional manual trigger
 
 permissions:
   contents: read
@@ -14,7 +15,6 @@ permissions:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -30,9 +30,6 @@ jobs:
 
     - name: Build with Maven (skip tests)
       run: mvn -B package -DskipTests --file pom.xml
-
-    - name: Update dependency graph
-      uses: github/dependency-submission-action@v2
 
     - name: Deploy to GitHub Packages
       if: github.event_name == 'release'
