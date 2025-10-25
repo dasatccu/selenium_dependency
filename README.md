@@ -1,6 +1,7 @@
 # Selenium Dependency
 
 [![GitHub release](https://img.shields.io/github/v/release/dasatccu/selenium_dependency?style=flat-square)](https://github.com/dasatccu/selenium_dependency/releases)
+![Build Status](https://github.com/dasatccu/selenium_dependency/actions/workflows/java-ci.yml/badge.svg?branch=master)
 
 **Selenium Dependency** is a reusable Maven POM that bundles commonly used dependencies for Selenium-based automation frameworks. It provides a single artifact for:
 
