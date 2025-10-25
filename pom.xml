@@ -13,6 +13,14 @@
 	<name>SeleniumDependency</name>
 	<description>Simple archetype POM for Selenium-based Automation Frameworks</description>
 
+	<distributionManagement>
+		<repository>
+			<id>SeleniumDependency</id>
+			<name>SeleniumDependency</name>
+			<url>https://maven.pkg.github.com/dasatccu/selenium_dependency</url>
+		</repository>
+	</distributionManagement>
+
 	<properties>
 		<java.version>11</java.version>
 		<selenium.version>4.34.0</selenium.version>
