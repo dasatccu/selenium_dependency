@@ -1,0 +1,12 @@
+{
+  "windows": {
+    "chrome": "drivers/windows/chrome/chromedriver.exe",
+    "edge": "drivers/windows/edge/msedgedriver.exe",
+    "firefox": "drivers/windows/firefox/geckodriver.exe"
+  },
+  "linux": {
+    "chrome": "drivers/linux/chrome/chromedriver",
+    "edge": "drivers/linux/edge/msedgedriver",
+    "firefox": "drivers/linux/firefox/geckodriver"
+  }
+}
