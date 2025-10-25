@@ -15,8 +15,8 @@
 
 	<distributionManagement>
 		<repository>
-			<id>SeleniumDependency</id>
-			<name>SeleniumDependency</name>
+			<id>github</id>
+			<name>GitHub Packages</name>
 			<url>https://maven.pkg.github.com/dasatccu/selenium_dependency</url>
 		</repository>
 	</distributionManagement>
