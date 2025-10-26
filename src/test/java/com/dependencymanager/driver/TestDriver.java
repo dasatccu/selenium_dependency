@@ -7,8 +7,8 @@ import org.testng.annotations.Test;
 public class TestDriver {
     @Test
     public void testDriverForChrome(){
-       DriverManager manager = new DriverManager();
-       WebDriver driver = manager.getDriver("windows","chrome");
-       Assert.assertNotNull(driver);
+        IDriverManager manager = DriverFactory.getManager();
+        WebDriver driver = manager.getDriver("windows","chrome");
+        driver.get("https://www.google.com");
     }
 }
